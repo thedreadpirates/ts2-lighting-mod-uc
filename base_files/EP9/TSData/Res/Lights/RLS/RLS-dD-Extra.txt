@@ -103,8 +103,8 @@ lightingState neighbourhoodNoPortals
    environment (1, 1, 1) 1.0  # override environment lighting state   
 end
 lightingState neighborhoodnight
-   skylight                         (0.2, 0.2, 1)     .3
-  light sun      (-1.5, -1,  2)    (.45, .45, 1)      1
+   skylight                        (.55,.55,.75)     .3
+  light sun      (-1.5, -1,  2)    (.55,.55,.75)     1
    lightMap   0x6fb59732
    diffParam insideAmbientColor       (1, .95, .75)
    diffParam insideFloorAmbient        .15 
@@ -118,8 +118,8 @@ lightingState neighborhoodnight
    modifiers insideObjects     1       1         2        1 
    modifiers outsideObjects    0.5     1         4         2  
    unlitRoomColor (0.01, 0.01, 0.01)
-flatShade (.3, .35, .9) .5  # for lighting quality 0
-environment (0.5, 0.5, 1) 0.65  # override environment lighting state
+flatShade (.66, .66, .66) .5  # for lighting quality 0
+environment (.55,.55,.75) 0.65  # override environment lighting state
 end
 #######################################
 ######

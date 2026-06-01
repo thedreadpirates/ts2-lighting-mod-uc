@@ -4,8 +4,9 @@
 # LIGHT FILE May 4
 
 
-####################################################D
+####################################################
 # Global diffusion parameters
+####################################################
 
 # If auto-lighting is active, this has no absolute effect,
 # but it does factor into how quickly lights fall off.
@@ -19,8 +20,7 @@ set outsideWallAmbient                 0.25
 # wall for a wall with direct lighting, and a wall with
 # no other lighting respectively.
 set brightWallFloorContribution        1
-set darkWallFloorContribution          .5
-
+set darkWallFloorContribution          .75
 
 # Number of steps to use in the propagation algorithm.
 # The higher this number is, the farther light will
@@ -36,7 +36,7 @@ setf incidenceMapHeightClamp 1
 
 ####################################################
 # Automatic room lighting tuning constants
-#
+####################################################
 
 # Room object lighting algorithm
 # 0 = 5 directionals, 1 = 4 directionals,
@@ -45,28 +45,19 @@ setf roomLightingType 4
 
 # Multiplier on how brightly the objects are lit by
 # overall room lighting.
-set roomOverallStrength 0.4
-set sim:roomOverallStrength .8
-set object:roomOverallStrength 0.5
-set wall:roomOverallStrength 0.2
-set wall:roomDirectionalBoost  1
+set roomOverallStrength 0.6
+set sim:roomOverallStrength 1.0
+set object:roomOverallStrength 0.7
+set wall:roomOverallStrength 0.4
+set wall:roomDirectionalBoost       1.00
 setf wall:roomFromLightMapMix      1
 setf wall:roomFromLightMapStrength 3
 
-#set roomOverallStrength 0
-#set sim:roomOverallStrength 0
-#set object:roomOverallStrength 0
-#set wall:roomOverallStrength 0
-#set floor:roomOverallStrength 0
-#set wall:roomDirectionalBoost  0
-#setf wall:roomFromLightMapMix      0
-#setf wall:roomFromLightMapStrength 0
-
 # strength of room object bounce light
-set roomBounceStrength 0.25
+set roomBounceStrength 0.4
+
 # The amount of "crossover" from the side lights.
 set roomBounceCrossover 1
-
 
 # Bounce crossover determines how much of the sampled
 # side lighting leaks into the bounce light. (The
@@ -76,6 +67,7 @@ set roomBounceCrossover 1
 # strength & crossover of room object side lights
 set roomSideStrength  1.2
 set roomSideCrossover 1
+
 # slope of room object side lights -- zero is
 # horizontal, 1 is pointing down at a 45 degree
 # angle.
@@ -84,22 +76,23 @@ set roomSideSlope 0.75
 # This controls how much of the wall and floor colours
 # bleed into the object lighting. 1 gives full bleed,
 # 0 gives none at all.
-set roomSaturation 0.5
+set roomSaturation 0.75
 
 # How much direct lighting from portals (windows/doors) affects
 # Sim/object lighting.
-set roomPortalStrength .75
+set roomPortalStrength           1
 
 # How much to bias lighting so we get secondary variation
-# at ninety degrees to the major light direction.
-set roomCrossBias 0
-set object:roomCrossBias 0
-set sim:roomCrossBias 0
+set roomCrossBias 			      0.50
+set wall:roomCrossBias 		      0.50
+set object:roomCrossBias 	      0.50
+set sim:roomCrossBias 		      0.50
 
 # How much to over- or under-emphasize directional aspect
 # of room lighting.
-set object:roomDirectionalBoost 4
-set sim:roomDirectionalBoost 4
+set object:roomDirectionalBoost 	3.00
+set sim:roomDirectionalBoost 	 	3.00
+
 # Ceiling light proportional to floor.
 # (There is no actual ceiling, so illumination from
 # the ceiling is estimated as a fraction of the floor
@@ -119,6 +112,7 @@ set roomSpecular 0.8
 
 ####################################################
 # Features
+####################################################
 
 set wallDrivenPortals 1
 
@@ -134,7 +128,7 @@ setf portalLightJitter 0
 # it affects how much lights overlap each other. If
 # it's set too low, too many lights will overlap an
 # object or Sim, leading to light popping.
-set lightRangeCutoff 0.275
+set lightRangeCutoff 0.250
 
 # How far out from the wall you have to be before
 # a window/door spill light takes effect.
@@ -147,11 +141,12 @@ setf objectLightTransitionTime 0.1
 
 ####################################################
 # Adjacent Portal Brightness Suppression
+####################################################
 
 # the distance (in tiles) at which suppression drops to zero
 # With 2 we only get suppression from windows on the adjacent
 # tiles.
-set portalSuppressionRadius 4
+set portalSuppressionRadius 3
 
 
 # the amount of suppression to apply. if the suppressing
@@ -159,13 +154,13 @@ set portalSuppressionRadius 4
 #    1 - (1 - r/R) * f
 # where 'f' is the suppression amount, and 'R' the suppression
 # radius.
-set portalSuppressionAmount .2
+set portalSuppressionAmount .1
 
 
 ####################################################
 # Environment light maps (for lighting terrain/floors/
 # walls outside.)
-#
+####################################################
 
 set dayLightMapID    0xeba01cc9
 set nightLightMapID  0x8ba01cad
@@ -176,7 +171,7 @@ set testMap2ID       0x917660d
 
 ####################################################
 # Height map shadows
-#
+####################################################
 
 setf hmLotShadowStrength         1.5
 setf hmNHoodShadowStrength       0.47
@@ -190,12 +185,12 @@ setf hmBinaryShadowThreshold     0.99
 
 ####################################################
 # Time of day lighting states
-#
+####################################################
 
 
 ####################################################
 # Daytime
-#
+####################################################
 lightingState day
    control -edith true
 
@@ -263,7 +258,7 @@ end
 
 ####################################################
 # Nighttime
-#
+####################################################
 lightingState night
    control -edith true
 
@@ -323,7 +318,7 @@ end
 
 ####################################################
 # Morning
-#
+####################################################
 lightingState morning
    control -edith true
 
@@ -352,7 +347,7 @@ end
 
 ####################################################
 # Evening
-#
+####################################################
 lightingState evening
    control -edith true
 
@@ -412,7 +407,7 @@ lightingState neighbourhood
 
    # extra ambient for unlit rooms.
    unlitRoomColor (0.01, 0.01, 0.01)
-   environment (1, 1, 1) 1.0  # override environment lighting state   
+   environment (1, 1, 1) 1.0  # override environment lighting state
 
    # fog <colour> <nearRange> <farRange>
    # DISABLED pending shader program path support for linear fog.
@@ -423,41 +418,41 @@ end
 
 # Only here because the fallback path is currently broken.
 lightingState neighbourhoodNoPortals
-   
+
    skylight                      (.87,.925,1)  .25
    light sun      (1.75, -2, 1.5)    (1, .9, .8) 1.75
    light sky      (-2, 1.75, 2)  (0.7,.75,.8)   .5
    light fill1    (0, 0, 1)     (1,1,1)     0.25
 
    lightMap   $nhoodLightMapID
-   
+
    # inside diffusion
    diffParam insideAmbientColor       (1, .95, .75)
-   diffParam insideFloorAmbient        .15 
-   diffParam insideWallAmbient         .25 
-   
+   diffParam insideFloorAmbient        .15
+   diffParam insideWallAmbient         .25
+
    # diffusion inside and outside
    diffParam floorThreshold            0.154
    diffParam wallThreshold             0.12
-   
+
    #               pract. diffuse  p. falloff  d. falloff
    modifiers insidePortals       3      3.8        0.8         .9
    modifiers insidePortalSpills  3      4          .8         1.3
-   
+
    modifiers outsidePortals      0       0          1           1
    modifiers outsidePortalSpills 0       0          1           1
 
    #                         pract. diffuse  p. falloff  d. falloff
-   modifiers insideObjects     1       1         2        1 
-   modifiers outsideObjects    0.5     1         4         2  
+   modifiers insideObjects     1       1         2        1
+   modifiers outsideObjects    0.5     1         4         2
 
 
    # extra ambient for unlit rooms.
    unlitRoomColor (0.01, 0.01, 0.01)
-   
+
    flatShade (1, .95, .85) .75  # for lighting quality 0
 
-   environment (1, 1, 1) 1.0  # override environment lighting state   
+   environment (1, 1, 1) 1.0  # override environment lighting state
 end
 
 
@@ -534,7 +529,7 @@ end
 
 ####################################################
 # Neighbourhood - Night
-#
+####################################################
 lightingState neighborhoodnight
 
    skylight                         (0.6, 0.6, .9)     .5
@@ -576,7 +571,7 @@ end
 
 ####################################################
 # CAS
-#
+####################################################
 lightingState CAS
     # outside direct lighting
    skylight                      (.87,.925,1)  0.3

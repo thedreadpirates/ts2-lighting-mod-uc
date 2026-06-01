@@ -33,9 +33,9 @@ sinclude "objects/lightingFloorStudioDiffuser.txt"
 sinclude "objects/lightingFloorStudioBarnDoors.txt"
 sinclude "objects/lightingFloorStudioBoxDiffuser.txt"
 
-sinclude "windows/windows.txt"
+# sinclude "windows/windows.txt"
 
-sinclude "objects/colors.txt"
-sinclude "objects/lightObjects.txt"
-sinclude "objects/SpecialObjects.txt"
+# sinclude "objects/colors.txt"
+# sinclude "objects/lightObjects.txt"
+# sinclude "objects/SpecialObjects.txt"
 sinclude "CAS_lighting.txt"

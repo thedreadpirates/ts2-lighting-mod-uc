@@ -16,7 +16,7 @@ lightingState night
    control -edith true
 
    skylight                       (0.25, 0.25, 0.4)     0.75
-   light sun      (-1.5, -1,  2)    (.45, .45, 0.72)      0.5
+   light sun      (1.5, -1,  2)    (.45, .45, 0.72)      0.5
    light sky      (-1.5, -1, 1)    (0.25, 0.25, 0.47)   0.6
 
    #light fill1 (-2, -2, 2) 	(.5,.5,.7) .2  		# 5 #changes brighter

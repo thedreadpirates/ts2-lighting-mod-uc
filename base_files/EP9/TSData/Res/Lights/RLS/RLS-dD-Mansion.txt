@@ -23,8 +23,6 @@ lightAttribOverride lightingStreetDeco_light diffusionSourceIntensity 5
 create 45WattWALL(lightingWallDeco_light)
 create household(lightingWallDeco_light)
 
-
-
 ######## Special Objects ###############
 
 ##### FirePlaces #####

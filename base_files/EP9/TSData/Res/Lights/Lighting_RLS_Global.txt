@@ -112,30 +112,4 @@ set portalCornerSuppressionAmount 		0.1
 setf portalCornerSuppressionAmount  		0.1
 seti portalCornerSuppressionAmount 		0.1
 
-####################################################
-# Environment light maps (for lighting terrain/floors/
-# walls outside.)
-#
-
-set dayLightMapID    0xeba01cc9
-set nightLightMapID  0x8ba01cad
-set nhoodLightMapID  0x0be702ef
-set testMap1ID       0x917660c
-set testMap2ID       0x917660d
-set gunmodnightID    0x6fb59732
-
-
-####################################################
-# Height map shadows
-#
-
-setf hmLotShadowStrength         	1.5
-setf hmNHoodShadowStrength       	0.47
-setf hmSunLightTransitionZone    	1
-setf hmBlobWidthModifier         	0.05
-setf hmBlobHeightModifier        	0.09
-setf hmObjectShadowingBias       	0.1
-setf hmBinaryShadowThreshold     	0.99
-
-
 sinclude "RLS/RLS-Main.txt"

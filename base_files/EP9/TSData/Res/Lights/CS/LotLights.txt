@@ -50,6 +50,4 @@ sinclude "LightDefs/StoreLights.nlo"
 sinclude "objects/SpecialObjects.txt"
 sinclude "LightDefs/BGSpecialObjects.nlo"
 
-sinclude "CAS_lighting.txt"
-
 # BG Lighting Overrides

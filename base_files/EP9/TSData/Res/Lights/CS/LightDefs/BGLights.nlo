@@ -1,21 +1,3 @@
-# UNKNOWN
-######################################################################
-create 100WattWALL(lightingWallDeckSconce_light)
-create 75WattOVER2(lightingCeilingPaperShade_light)
-create 50WattFENCE(deckPostLamp_spot)
-create 50WattFENCE(lightingDeckPostLamp_light)
-create 150-Watt(lightingFencePostValue_light)
-create poleSTREETLIGHTstill(lightingStreetlightTriple_light)
-create Zero(streetlightTriple_left)
-create Zero(streetlightTriple_right)
-create 75WattFL5(lampfloorvalue_light)
-create 75-Watt(OLD_lightingTableBigBulb_toplight)
-create officetablelamp(lightingtablevalue_01_light)
-create bigBLUEbulb(lightingTableBigBulb_toplight)
-create bigGREENbulb(lightingTableBigBulbGreen_toplight)
-create bigREDbulb(lightingTableBigBulbRed_toplight)
-######################################################################
-
 ############ TABLE LIGHTS #########################
 #1 Pix-Arm Drafting Table Lamp #
 create officetablelamp(lightingTableValue1_light)

@@ -14,8 +14,8 @@ lightingState night
    control -edith true
 
    skylight                         (0.25, 0.25, 0.3)     0.75
-   light sun      (-1, 1,  2)    (.5, .5, .85)      .7
-   light sky      (1.5,  -1, 1)    (.25, 0.25, 0.75)    .6
+   light sun      (-1, -1,  2)    (.5, .5, .85)      .7
+   light sky      (-1.5,  -1, 1)    (.25, 0.25, 0.75)    .6
 
   light simFill1  (-1.25, -.75, 1.2) (.82,.8, .8)  1
   light simFill2  (1.25, .75, 1.2) (.82,.8, .8)  .6
@@ -30,8 +30,8 @@ lightingState night
    #                              pract. diffuse  p. falloff  d. falloff
    modifiers insidePortals         0      .2      1 1
    modifiers insidePortalSpills    0      .2      1 1
-   modifiers outsidePortals        3      3       .5         1
-   modifiers outsidePortalSpills   3      3       .5         1
+   modifiers outsidePortals        4      4       .5         1
+   modifiers outsidePortalSpills   4      4       .5         1
 
    #                         pract. diffuse  p. falloff  d. falloff
    modifiers insideObjects     0.8     .7       .25      .65

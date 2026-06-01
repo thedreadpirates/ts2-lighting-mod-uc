@@ -20,12 +20,11 @@ set outsideWallAmbient                 0.15
 set brightWallFloorContribution        1
 set darkWallFloorContribution          1
 
-
 # Number of steps to use in the propagation algorithm.
 # The higher this number is, the farther light will
 # spread, but also the longer diffusion will take.
-seti wallPropagationSteps 10
-seti floorPropagationSteps 10
+seti wallPropagationSteps 25
+seti floorPropagationSteps 25
 
 # strength of wall and floor bumpmapping, derived from
 # diffusion map.
@@ -51,7 +50,7 @@ set wall:roomOverallStrength     0.80
 # strength of room object bounce light
 set roomBounceStrength 			   0.65
 set wall:roomBounceStrength 		0.55
-set object:roomBounceStrength 	0.65
+set object:roomBounceStrength 	0.60
 set sim:roomBounceStrength 		0.75
  
 # The amount of "crossover" from the side lights.

@@ -38,7 +38,7 @@ lightingState night
    diffParam wallThreshold      .4
 
    modifiers insidePortals       0.2  1  .4  .4
-   modifiers insidePortalSpills  3.7 .9  1   1
+   modifiers insidePortalSpills  3.5 .9  1   1
    modifiers outsidePortals      0  0  1    1
    modifiers outsidePortalSpills     3.2    3.5     1     1
 
@@ -52,7 +52,7 @@ lightingState night
    environment (.2, .2, .4)    1
 
    # extra ambient for unlit rooms.
-   unlitRoomColor (0.07, 0.07, 0.09) -threshold .4
+   unlitRoomColor (0.07, 0.07, 0.09) -threshold .3
 
    flatShade (1, 1, 1) 1  -sims 1 -objects 1 -indoors 1
 
